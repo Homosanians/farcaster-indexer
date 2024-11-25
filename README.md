@@ -12,16 +12,36 @@ Clone this repo
 git clone -b hubs https://github.com/gskril/farcaster-indexer.git
 ```
 
-Install dependencies
-
-```bash
-yarn install
-```
-
 Create a `.env` file with your hub, database, and redis connection details
 
 ```bash
 cp .env.example .env
+```
+
+### Docker
+
+Compose will build the indexer, create postgres, redis containers, run migrations start start backfilling
+
+```bash
+docker-compose up --build
+```
+
+(Optional) Override environment variables to update them without rebuilding image
+
+```yaml
+services:
+  indexer:
+    environment:
+      WORKER_CONCURRENCY: 5
+      BACKFILL_MAX_FID: 100
+```
+
+### Manual
+
+Install dependencies
+
+```bash
+yarn install
 ```
 
 Run the latest database migrations
