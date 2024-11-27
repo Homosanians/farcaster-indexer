@@ -2,7 +2,7 @@ services:
   indexer:
     build:
       context: .
-      dockerfile: ./src/Dockerfile
+      dockerfile: ./Dockerfile
     image: farcaster-indexer:latest
     container_name: farcaster-indexer
     environment: # override
