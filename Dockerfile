@@ -2,9 +2,9 @@ FROM node:20-slim
 
 WORKDIR /app
 
-COPY .package.json .yarn.lock ./
+COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-COPY ./src .
+COPY . .
 
 CMD ["yarn", "run", "backfill"]
