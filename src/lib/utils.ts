@@ -187,9 +187,9 @@ export async function getFullProfileFromHub(_fid: number) {
   const verifications = await hubClient.getVerificationsByFid(fid)
 
   return {
-    casts: await getAllCastsByFid(fid),
-    reactions: await getAllReactionsByFid(fid),
-    links: await getAllLinksByFid(fid),
+    // casts: await getAllCastsByFid(fid),
+    // reactions: await getAllReactionsByFid(fid),
+    // links: await getAllLinksByFid(fid),
     userData: checkMessages(userData, _fid),
     verifications: checkMessages(verifications, _fid),
 

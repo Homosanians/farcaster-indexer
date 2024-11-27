@@ -111,9 +111,9 @@ async function handleJob(job: Job) {
 
     if (!p) continue
 
-    await insertCasts(p.casts)
-    await insertLinks(p.links)
-    await insertReactions(p.reactions)
+    // await insertCasts(p.casts)
+    // await insertLinks(p.links)
+    // await insertReactions(p.reactions)
     await insertUserDatas(p.userData)
     await insertVerifications(p.verifications)
 
